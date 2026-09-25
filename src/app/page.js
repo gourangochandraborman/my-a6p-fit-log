@@ -46,7 +46,7 @@ const homepage = () => {
 
       <Banner></Banner>
 
-      <Card></Card>
+      {/* <Card></Card> */}
     </div>
 
   );

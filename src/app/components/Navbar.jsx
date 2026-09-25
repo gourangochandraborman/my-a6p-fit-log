@@ -1,6 +1,9 @@
 import Image from 'next/image';
 import React from 'react';
 import Link from 'next/link'
+import PlanPage from '../plan/page'
+import SavedPage from '../saved/page'
+
 
 
 
@@ -9,7 +12,11 @@ const Navbar = () => {
 
     const links = <>
         <li className='text-[#C2F800] bg-[#29381c] rounded-[90px]'> <Link href="/workouts">Workouts</Link></li>
-        <li> <Link href="/my-plan">My Plan</Link></li>
+        <li> <Link href="/myplan">MyPlan</Link></li>
+    </>;
+    const links2 = <>
+        <li> <Link href="/myplan">Plan <samp className="rounded-full w-7 h-7 bg-[#C2F800] text-black p-1 text-center">0 </samp> </Link></li>
+        <li> <Link href="/myplan">Save</Link></li>
     </>;
 
     return (
@@ -33,22 +40,30 @@ const Navbar = () => {
                         height={40}
                     />
                 </div>
-                <Link href="/" className="btn btn-ghost normal-case text-xl text-white">FitLog</Link>
+                <Link href="/" className="btn btn-ghost normal-case text-xl text-white">FitLog </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                    
+
                     {links}
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn bg-black border-none">Plan <samp className="rounded-full w-7 h-7 bg-[#C2F800] text-black p-1">0</samp></a>
-                <a className="btn bg-black border-none">Saved <samp className="rounded-full w-7 h-7 border border-gray-300 text-white p-1">0</samp></a>
+                {/* <a className="btn bg-black border-none"> Plan <samp className="rounded-full w-7 h-7 bg-[#C2F800] text-black p-1">0</samp></a>
+                <a className="btn bg-black border-none"> Saved <samp className="rounded-full w-7 h-7 border border-gray-300 text-white p-1">0</samp></a> */}
+
+                
+                <ul className="menu menu-horizontal px-1">
+
+                    {links2}
+                </ul>
+            
+
             </div>
         </div>
 
 
-        
+
 
 
 
