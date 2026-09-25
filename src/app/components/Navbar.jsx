@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
+import Link from 'next/link'
 
 
 
@@ -7,8 +8,8 @@ import React from 'react';
 const Navbar = () => {
 
     const links = <>
-        <li className='text-[#C2F800] bg-[#29381c] rounded-[90px]'><a>Workouts</a></li>
-        <li><a>My Plan</a></li>
+        <li className='text-[#C2F800] bg-[#29381c] rounded-[90px]'> <Link href="/workouts">Workouts</Link></li>
+        <li> <Link href="/my-plan">My Plan</Link></li>
     </>;
 
     return (
@@ -32,10 +33,11 @@ const Navbar = () => {
                         height={40}
                     />
                 </div>
-                <a className="btn btn-ghost text-xl">FITLOG</a>
+                <Link href="/" className="btn btn-ghost normal-case text-xl text-white">FitLog</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
+                    
                     {links}
                 </ul>
             </div>

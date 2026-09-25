@@ -1,13 +1,12 @@
-// import Image from 'next/image';
 import React from 'react';
-// import Card from './Workouts/page.jsx';
-import Card from './components/Card.jsx';
-import Banner from './components/Banner.jsx'
+import Image from 'next/image';
+import Card from './Card';
+
 
 const homepage = () => {
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-[30]">
-      {/* <section className="relative overflow-hidden rounded-3xl border border-[#1b2233] bg-[#0B1020]">
+      <section className="relative overflow-hidden rounded-3xl border border-[#1b2233] bg-[#0B1020]">
         <div className="grid lg:grid-cols-2 gap-10 items-center p-8 md:p-12 lg:p-16">
 
           
@@ -42,9 +41,9 @@ const homepage = () => {
             />
           </div>
         </div>
-      </section> */}
+      </section>
 
-      <Banner></Banner>
+
 
       <Card></Card>
     </div>
@@ -53,4 +52,3 @@ const homepage = () => {
 };
 
 export default homepage;
-
