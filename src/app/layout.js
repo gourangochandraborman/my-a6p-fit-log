@@ -1,6 +1,8 @@
 import { Geist, Oswald } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import Card from "./components/Card";
+import Footer from "./components/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,6 +32,13 @@ export default function RootLayout({ children }) {
           {children}
         </main>
 
+        <Card></Card>
+
+        {/* <card>
+          <h2 className="text-white text-center text-[100px] m-8"> welcone to my card</h2>
+        </card> */}
+
+        <Footer></Footer>
       </body>
     </html>
   );

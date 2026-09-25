@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
+// import Card from './components/Card';
 
 const homepage = () => {
   return (
@@ -30,7 +31,7 @@ const homepage = () => {
           </div>
 
           {/* Right Image */}
-          <div className=" flex justify-center lg:justify-end">
+          <div className=" flex justify-center lg:justify-end loading-eager ">
             <Image
               src= "/banner.png"
               alt="Workout"
@@ -41,7 +42,11 @@ const homepage = () => {
         </div>
       </section>
     </div>
+
+  
+
   );
 };
 
 export default homepage;
+
