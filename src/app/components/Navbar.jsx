@@ -12,7 +12,7 @@ const Navbar = () => {
     </>;
 
     return (
-        <div className="navbar bg-black shadow-sm">
+        <div className="navbar bg-black shadow-sm container mx-auto rounded-3xl px-4 sm:px-6 lg:px-8">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -24,12 +24,12 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <div className="w-10 h-5 rounded-full">
+                <div>
                     <Image
-                        src="/src/app/assets/logo.png"
+                        src="/logo.png"
                         alt="logo"
-                        width={500}
-                        height={500}
+                        width={40}
+                        height={40}
                     />
                 </div>
                 <a className="btn btn-ghost text-xl">FITLOG</a>
@@ -44,6 +44,12 @@ const Navbar = () => {
                 <a className="btn bg-black border-none">Saved <samp className="rounded-full w-7 h-7 border border-gray-300 text-white p-1">0</samp></a>
             </div>
         </div>
+
+
+        
+
+
+
     );
 };
 
