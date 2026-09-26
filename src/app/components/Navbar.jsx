@@ -1,3 +1,4 @@
+"use client";
 import Image from 'next/image';
 import React from 'react';
 import Link from 'next/link'
@@ -5,18 +6,59 @@ import PlanPage from '../plan/page'
 import SavedPage from '../saved/page'
 
 
+import { useEffect, useState } from "react";
 
 
 
 const Navbar = () => {
+
+
+    // const Navbar = () => {
+
+    const [planCount, setPlanCount] = useState(0);
+    const [savedCount, setSavedCount] = useState(0);
+
+    useEffect(() => {
+        const planData =
+            JSON.parse(localStorage.getItem("todayPlan")) || [];
+
+        const savedData =
+            JSON.parse(localStorage.getItem("savedPlan")) || [];
+
+        setPlanCount(planData.length);
+        setSavedCount(savedData.length);
+
+        updateCount();
+
+        window.addEventListener("storage", updateCount);
+
+        return () => {
+            window.removeEventListener("storage", updateCount);
+        };
+    }, []);
 
     const links = <>
         <li className='text-[#C2F800] bg-[#29381c] rounded-[90px]'> <Link href="/workouts">Workouts</Link></li>
         <li> <Link href="/myplan">MyPlan</Link></li>
     </>;
     const links2 = <>
-        <li> <Link href="/myplan">Plan <samp className="rounded-full w-7 h-7 bg-[#C2F800] text-black p-1 text-center">0 </samp> </Link></li>
-        <li> <Link href="/myplan">Save</Link></li>
+        <li>
+            <Link href="/myplan">
+                Plan
+                <samp className="rounded-full w-7 h-7 bg-[#C2F800] text-black p-1 text-center">
+                    {planCount}
+                </samp>
+            </Link>
+        </li>
+
+        <li>
+            <Link href="/saved">
+                Save
+                <samp className="rounded-full w-7 h-7 border border-gray-300 text-white p-1 text-center">
+                    {savedCount}
+                </samp>
+            </Link>
+        </li>
     </>;
 
     return (
@@ -52,12 +94,12 @@ const Navbar = () => {
                 {/* <a className="btn bg-black border-none"> Plan <samp className="rounded-full w-7 h-7 bg-[#C2F800] text-black p-1">0</samp></a>
                 <a className="btn bg-black border-none"> Saved <samp className="rounded-full w-7 h-7 border border-gray-300 text-white p-1">0</samp></a> */}
 
-                
+
                 <ul className="menu menu-horizontal px-1">
 
                     {links2}
                 </ul>
-            
+
 
             </div>
         </div>

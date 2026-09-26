@@ -43,7 +43,8 @@ const Card = async () => {
           > */}
 
         {data.map((item) => (
-          <Link href={`/workout/${item.id}`} key={item.id}>
+          <Link href={`/workouts/${item.id}`} key={item.id}>
+          
             <div className="bg-[#0B1020] border border-[#1B2233] rounded-3xl overflow-hidden cursor-pointer hover:border-[#C8FF00]/50 transition-all">
 
 

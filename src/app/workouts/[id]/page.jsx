@@ -1,8 +1,30 @@
 import React from "react";
 
+import AddToPlanButton from "@/src/app/components/AddToPlanButton";
+import SaveWorkoutButton from "@/src/app/components/SaveWorkoutButton";
+
+const addToPlan = () => {
+  const existing =
+    JSON.parse(localStorage.getItem("todayPlan")) || [];
+
+  const alreadyAdded = existing.find(
+    (workout) => workout.id === item.id
+  );
+
+  if (!alreadyAdded) {
+    existing.push(item);
+    localStorage.setItem(
+      "todayPlan",
+      JSON.stringify(existing)
+    );
+  }
+};
+
+
+
 const WorkoutDetails = async ({ params }) => {
   const { id } = await params;
-  
+
   const res = await fetch(
     `https://api.abcz.workers.dev/api/fitlog/${id}`,
     {
@@ -109,13 +131,16 @@ const WorkoutDetails = async ({ params }) => {
             {/* Buttons */}
             <div className="flex flex-wrap gap-4 mt-10">
 
-              <button className="bg-[#C8FF00] text-black font-bold px-8 py-4 rounded-2xl">
+              {/* <button
+                // onClick={addToPlan}
+                className="bg-[#C8FF00] text-black font-bold px-8 py-4 rounded-2xl"
+              >
                 Add to today's plan
-              </button>
+              </button> */}
 
-              <button className="border border-[#1B2233] text-white px-8 py-4 rounded-2xl">
-                Save for later
-              </button>
+              <AddToPlanButton item={item} />
+
+              <SaveWorkoutButton item={item} />
 
             </div>
 

@@ -28,6 +28,7 @@ export default function RootLayout({ children }) {
       <body className={ `${geistOswald.className} ${geistOswald.variable} min-h-full flex flex-col`}>
 
         <Navbar></Navbar>
+
         <main>
           {children}
         </main>
