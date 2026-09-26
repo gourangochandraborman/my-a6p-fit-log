@@ -19,6 +19,8 @@ const Navbar = () => {
     const [savedCount, setSavedCount] = useState(0);
 
     useEffect(() => {
+    const updateCount = () => {
+
         const planData =
             JSON.parse(localStorage.getItem("todayPlan")) || [];
 
@@ -27,15 +29,17 @@ const Navbar = () => {
 
         setPlanCount(planData.length);
         setSavedCount(savedData.length);
+    };
 
-        updateCount();
+    updateCount();
 
-        window.addEventListener("storage", updateCount);
+    window.addEventListener("storage", updateCount);
 
-        return () => {
-            window.removeEventListener("storage", updateCount);
-        };
-    }, []);
+    return () => {
+        window.removeEventListener("storage", updateCount);
+    };
+
+}, []);
 
     const links = <>
         <li className='text-[#C2F800] bg-[#29381c] rounded-[90px]'> <Link href="/workouts">Workouts</Link></li>

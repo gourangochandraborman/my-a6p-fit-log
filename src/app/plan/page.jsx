@@ -1,12 +1,13 @@
-// import React from 'react';
-// // import MyPlan from './page';
+import React from 'react';
+import MyPlanPage from '../myplan/page';
+// import MyPlan from './page';
 
-// const PlanPage = () => {
-//     return (
-//         <div>
-//             <MyPlan></MyPlan>
-//         </div>
-//     );
-// };
+const PlanPage = () => {
+    return (
+        <div>
+            <MyPlanPage></MyPlanPage>
+        </div>
+    );
+};
 
-// export default PlanPage;
+export default PlanPage;
