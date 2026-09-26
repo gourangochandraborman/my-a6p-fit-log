@@ -47,7 +47,7 @@ export default function MyPlanPage() {
   );
 
   return (
-    <section className="min-h-screen bg-[#050A14] text-white">
+    <section className="min-h-screen bg-[#050A14] text-white container mx-auto">
 
       <div className="container mx-auto px-4 py-14">
 
@@ -164,7 +164,7 @@ export default function MyPlanPage() {
 
           </div>
         ) : (
-          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6 mt-10">
+          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6 mt-10 ">
 
             {currentData.map((item) => (
               <div
