@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 // import Card from "./components/Card";
 import Footer from "./components/footer";
+import { Toaster } from "react-hot-toast";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,6 +29,8 @@ export default function RootLayout({ children }) {
       <body className={ `${geistOswald.className} ${geistOswald.variable} min-h-full flex flex-col`}>
 
         <Navbar></Navbar>
+
+         <Toaster position="top-right" />
 
         <main>
           {children}
